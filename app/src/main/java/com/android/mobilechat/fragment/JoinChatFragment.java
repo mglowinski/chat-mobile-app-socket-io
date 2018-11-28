@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.android.mobilechat.R;
 
-public class JoinChatFragment extends Fragment implements View.OnClickListener {
+public class JoinChatFragment extends Fragment {
 
     public static final String TAG = JoinChatFragment.class.getName();
 
@@ -60,17 +60,12 @@ public class JoinChatFragment extends Fragment implements View.OnClickListener {
 
     private void configureJoinButton(View view) {
         Button joinButton = view.findViewById(R.id.btnJoin);
-        joinButton.setOnClickListener(this);
+        joinButton.setOnClickListener(v -> startChat());
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnJoin:
-                String userName = getValueFromEditText(nameEditText);
-                loadChatFragment(addNameToBundle(userName));
-                break;
-        }
+    private void startChat() {
+        String userName = getValueFromEditText(nameEditText);
+        loadChatFragment(addNameToBundle(userName));
     }
 
     private String getValueFromEditText(EditText editText) {
