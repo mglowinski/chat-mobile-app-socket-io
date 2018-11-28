@@ -3,15 +3,13 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <ListView
-            android:id="@+id/list_view_messages"
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_messages"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:transcriptMode="alwaysScroll"
+            android:scrollbars="vertical"
             android:background="@drawable/chat_background"
-            android:stackFromBottom="true">
-    </ListView>
+            android:layout_weight="1"/>
 
     <LinearLayout
             android:id="@+id/llMsgCompose"
